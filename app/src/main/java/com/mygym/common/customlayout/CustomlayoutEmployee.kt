@@ -7,20 +7,20 @@ import android.widget.LinearLayout
 import com.mygym.R
 import com.mygym.databinding.CustomlayoutEmployeeMenuBinding
 
-class CustomlayoutEmoji (context: Context, attrs: AttributeSet) : LinearLayout(context, attrs) {
+class CustomlayoutEmployee (context: Context, attrs: AttributeSet) : LinearLayout(context, attrs) {
     private var binding: CustomlayoutEmployeeMenuBinding = CustomlayoutEmployeeMenuBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
         // attrs.xml에서 View의 속성 목록을 가져온다.
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomlayoutEmoji)
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomlayoutEmployee)
 
-        val emoji = typedArray.getString(R.styleable.CustomlayoutEmoji_emoji)
+        val emoji = typedArray.getString(R.styleable.CustomlayoutEmployee_emoji)
         binding.tvEmojiButton.text = emoji
 
-        val title = typedArray.getString(R.styleable.CustomlayoutEmoji_title)
+        val title = typedArray.getString(R.styleable.CustomlayoutEmployee_title)
         binding.tvTitleButton.text = title
 
-        val count = typedArray.getInt(R.styleable.CustomlayoutEmoji_count, 0)
+        val count = typedArray.getInt(R.styleable.CustomlayoutEmployee_count, 0)
         binding.tvCountButton.text = count.toString()
 
         // 데이터를 캐싱해두어 가비지컬렉션에서 제외시키도록 하는 함수
