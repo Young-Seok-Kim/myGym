@@ -2,8 +2,8 @@ package com.mygym
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.mygym.databinding.ActivityLoginBinding
-import com.example.mygym.databinding.ActivityMainBinding
+import com.mygym.databinding.ActivityLoginBinding
+import com.mygym.databinding.ActivityMainBinding
 
 class LoginActivity : AppCompatActivity() {
 

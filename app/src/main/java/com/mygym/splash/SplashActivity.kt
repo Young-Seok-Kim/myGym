@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.mygym.LoginActivity
+import com.mygym.MainActivity
 
 
 class SplashActivity : Activity(){
@@ -14,7 +15,7 @@ class SplashActivity : Activity(){
 //        if(true) // 업데이트를 반드시 해야한다면 해당값을 true로 변경
 //            versionCheck()
 //        else {
-            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+            val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
 //        }

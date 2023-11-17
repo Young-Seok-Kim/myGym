@@ -2,7 +2,7 @@ package com.mygym.common.recyclerview
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mygym.R
+import com.mygym.R
 
 class ItemClickSupport(recyclerView: RecyclerView) {
     private var mRecyclerView: RecyclerView? = recyclerView
