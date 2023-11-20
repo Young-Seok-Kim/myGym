@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mygym.MainActivity">
+    tools:context="com.mygym.activity.MainActivity">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -16,25 +16,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
+            android:id="@+id/test"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:count="2"
-            app:emoji="👍"
-            app:title="test"/>
-
-        <com.mygym.common.customlayout.CustomlayoutEmployee
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:count="2"
-            app:emoji="👍"
-            app:title="test"/>
+            app:title="회원관리"/>
 
 
     </GridLayout>

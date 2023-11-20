@@ -1,4 +1,4 @@
-package com.mygym
+package com.mygym.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

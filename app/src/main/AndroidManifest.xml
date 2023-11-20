@@ -12,12 +12,17 @@
         android:theme="@style/Theme.MyGym"
         tools:targetApi="31">
         <activity
-            android:name="com.mygym.MainActivity"
+            android:name="com.mygym.activity.MainActivity"
             android:exported="true">
         </activity>
 
         <activity
-            android:name="com.mygym.splash.SplashActivity"
+            android:name="com.mygym.ui.employee.EmployeeActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name="com.mygym.activity.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
