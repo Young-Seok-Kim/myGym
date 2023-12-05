@@ -1,16 +1,17 @@
-package com.mygym.activity
+package com.mygym.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mygym.databinding.ActivityLoginBinding
 import com.mygym.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater,null,false)
+        binding = ActivityLoginBinding.inflate(layoutInflater,null,false)
         setContentView(binding.root)
     }
 }

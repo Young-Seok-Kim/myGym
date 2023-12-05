@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".ui.employee.room.MyGymApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,9 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGym"
         tools:targetApi="31">
-        <activity
-            android:name="com.mygym.activity.MainActivity"
+        <receiver android:name=".ui.employee.alarm.EndMembershipReceiver"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.mygym.ui.activity.MainActivity"
+            android:exported="true">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="test2" android:scheme="bill" />
+            </intent-filter>-->
         </activity>
 
         <activity
@@ -22,7 +36,7 @@
         </activity>
 
         <activity
-            android:name="com.mygym.activity.SplashActivity"
+            android:name="com.mygym.ui.activity.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>

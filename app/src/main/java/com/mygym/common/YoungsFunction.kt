@@ -1,14 +1,19 @@
 package com.mygym.common
 
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
+import android.app.*
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.NotificationCompat
+import com.mygym.R
 import com.mygym.common.Define
+import com.mygym.ui.activity.MainActivity
+import com.mygym.ui.employee.room.MyGymRoomDataBase
+import com.mygym.ui.employee.room.member.MemberDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -233,5 +238,46 @@ object YoungsFunction {
             minute,
             true
         ).show()
+    }
+
+    fun pushAlert(context : Context, content : String)
+    {
+        lateinit var builder: NotificationCompat.Builder
+
+        //오레오 이상은 반드시 채널을 설정해줘야 Notification이 작동함
+        val CHANNEL_ID = "channel1"
+        val CHANNEL_NAME = "Channel1"
+
+
+        val manager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        manager.createNotificationChannel(
+            NotificationChannel(
+                CHANNEL_ID,
+                CHANNEL_NAME,
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+        )
+        builder = NotificationCompat.Builder(context, CHANNEL_ID)
+
+        //알림창 클릭 시 activity 화면 부름
+        val intent2 = Intent(context, MainActivity::class.java)
+        val pendingIntent =
+            PendingIntent.getActivity(context, 101, intent2, PendingIntent.FLAG_UPDATE_CURRENT)
+
+        //알림창 제목
+        builder.setContentTitle(content)
+        //알림창 아이콘
+        builder.setSmallIcon(com.google.android.material.R.drawable.ic_mtrl_chip_checked_circle)
+        //알림창 터치시 자동 삭제
+        builder.setAutoCancel(true)
+        builder.setContentIntent(pendingIntent)
+        val notification: Notification = builder.build()
+        manager.notify(1, notification)
+    }
+
+    fun getDataBase(context: Context): MemberDao
+    {
+        return MyGymRoomDataBase.getDatabase(context).memberDao()
     }
 }

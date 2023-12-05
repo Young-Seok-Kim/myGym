@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mygym.activity.MainActivity">
+    tools:context="com.mygym.ui.activity.MainActivity">
 
     <EditText
         android:id="@+id/userid"
@@ -100,7 +100,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/customlayout_button_sub"
             android:textColor="@color/little_light_black"
-            android:text="@string/action_sign_up"/>
+            android:text="@string/add_member"/>
 
         <Button
             android:id="@+id/button_KakaoLogin"

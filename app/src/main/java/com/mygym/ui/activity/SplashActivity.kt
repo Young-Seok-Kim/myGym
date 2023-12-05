@@ -1,4 +1,4 @@
-package com.mygym.activity
+package com.mygym.ui.activity
 
 import android.app.Activity
 import android.content.Intent

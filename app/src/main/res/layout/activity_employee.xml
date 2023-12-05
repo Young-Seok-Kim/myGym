@@ -5,26 +5,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mygym.activity.MainActivity">
+    tools:context="com.mygym.ui.activity.MainActivity">
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="2">
+        android:orientation="vertical">
 
-        <com.mygym.common.customlayout.CustomlayoutEmployee
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:id="@+id/test"
-            android:layout_marginTop="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:title="회원관리"/>
+            android:text="@string/app_name"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2">
+            <com.mygym.common.customlayout.CustomlayoutEmployee
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:id="@+id/manage_member"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="회원관리"/>
+
+            <com.mygym.common.customlayout.CustomlayoutEmployee
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/test"
+                android:layout_columnWeight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="로딩 테스트"/>
+            <com.mygym.common.customlayout.CustomlayoutEmployee
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:id="@+id/test_alarm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="알람 테스트"/>
 
 
-    </GridLayout>
+        </GridLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

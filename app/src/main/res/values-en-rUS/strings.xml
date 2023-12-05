@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">My Gym</string>
     <string name="action_sign_in">Login</string>
-    <string name="action_sign_up">Sign in</string>
+    <string name="add_member">Add Member</string>
     <string name="welcome">Welcome!</string>
     <string name="invalid_username">not valid User</string>
     <string name="invalid_password">password is must be longer than 6</string>
@@ -10,11 +11,19 @@
     <string name="login_password">LoginPassword</string>
     <string name="login_name">LoginName</string>
     <string name="hello_android">Hello android</string>
-    <string name="Delete">Delete</string>
-    <string name="Save">Save</string>
+    <string name="address">Address</string>
+    <string name="remark">Remark</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="save_login_information">Save Login Information</string>
     <string name="auto_login">Auto Login</string>
     <string name="kakao_login">Kakao login</string>
     <string name="manage_consumer">manage consumer</string>
+    <string name="members">Members</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone number</string>
+    <string name="regist_month">Resist month</string>
+    <string name="update_member">Update Member</string>
 </resources>
