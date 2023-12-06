@@ -2,7 +2,6 @@ package com.mygym.ui.employee.member.list
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +23,7 @@ class AddMemberFragment : DialogFragment() {
 
     private lateinit var onClickListener: OnDialogDismissListener
 
-    lateinit var test : MemberEntity
+    lateinit var selectMember : MemberEntity
     var isUpdate : Boolean = false
 
 
@@ -54,20 +53,19 @@ class AddMemberFragment : DialogFragment() {
             binding.buttonAdd.setText(R.string.add_member)
         }
 
-        if (this::test.isInitialized.not())
+        if (this::selectMember.isInitialized.not())
         {
-            test = MemberEntity("","","","","","","","")
+            selectMember = MemberEntity("","","","","","","","")
         }
           else
         {
-            binding.editTextName.setText(test.name)
-            binding.editTextEmail.setText(test.email)
-            binding.editTextPhoneNumber.setText(test.phoneNumber)
-            binding.editTextAddress.setText(test.address)
-            binding.editTextRemark.setText(test.remark)
+            binding.editTextName.setText(selectMember.name)
+            binding.editTextEmail.setText(selectMember.email)
+            binding.editTextPhoneNumber.setText(selectMember.phoneNumber)
+            binding.editTextAddress.setText(selectMember.address)
+            binding.editTextRemark.setText(selectMember.remark)
         }
 
-        Log.d("멤버",test.toString())
 
         binding.buttonAdd.setOnClickListener(){
 

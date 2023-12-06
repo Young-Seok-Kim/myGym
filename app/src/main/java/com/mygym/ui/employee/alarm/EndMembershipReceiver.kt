@@ -20,7 +20,6 @@ class EndMembershipReceiver : android.content.BroadcastReceiver() {
 
         if(intent?.extras?.get("code") == MainActivity.REQUEST_CODE) {
             alertEndMember(context)
-            Log.d("특정시간에 알림", LocalDateTime.now().toString())
         }
     }
 

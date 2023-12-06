@@ -66,8 +66,6 @@ public class SslConnect {
             https.setHostnameVerifier(DO_NOT_VERIFY);
             https.setConnectTimeout(connTimeout);
             https.setReadTimeout(readTimeout);
-
-            Log.d("postHttps","실행");
         }
         catch (MalformedURLException e) {
             e.printStackTrace();

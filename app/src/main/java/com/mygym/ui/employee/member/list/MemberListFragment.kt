@@ -27,11 +27,11 @@ class MemberListFragment : DialogFragment() {
 
         initList()
         getList()
+
         binding.FAB.setOnClickListener() {
             AddMemberFragment().let {
                 it.setOnDismissListener(object : AddMemberFragment.OnDialogDismissListener {
                     override fun whenDismiss() {
-                        Log.d("닫음", "ㅈㄱㄴ")
                         getList()
                     }
                 })
@@ -54,18 +54,22 @@ class MemberListFragment : DialogFragment() {
     }
 
     private fun getList() {
-        CoroutineScope(Dispatchers.IO).launch {
-            val members =
-                MyGymRoomDataBase.getDatabase(requireContext()).memberDao().getAllMembers()
-            data.clear()
 
-            for (i in members.indices) {
-                data.add(i, members[i])
-            }
-            adapter.dataList = data
-            Log.d("adapter.dataList", adapter.dataList.toString())
+        CoroutineScope(Dispatchers.Default).launch Default@{
+            CoroutineScope(Dispatchers.IO).launch {
+                val members =
+                    MyGymRoomDataBase.getDatabase(requireContext()).memberDao().getAllMembers()
+                data.clear()
+
+                for (i in members.indices) {
+                    data.add(i, members[i])
+                }
+                adapter.dataList = data
+            }.join()
+            CoroutineScope(Dispatchers.Main).launch {
+                adapter.notifyDataSetChanged()
+            }.join()
         }
-        adapter.notifyDataSetChanged()
     }
 
     private fun initList() {
@@ -74,26 +78,22 @@ class MemberListFragment : DialogFragment() {
 
         adapter.setItemClickListener(object : MemberListAdapter.OnItemClickListener {
             override fun onClick(v: View, position: Int, member : MemberEntity) {
-                Log.d(
-                    "test",
-                    " index : " + member.index
-                )
                 AddMemberFragment().let {
                     it.setOnDismissListener(object : AddMemberFragment.OnDialogDismissListener {
                         override fun whenDismiss() {
-                            Log.d("닫음", "ㅈㄱㄴ")
                             getList()
                         }
                     })
                     it.setStyle(DialogFragment.STYLE_NORMAL, R.style.FullDialogTheme)
                     it.dialog?.window?.setWindowAnimations(android.R.style.Animation_Dialog)
-                    it.test = member
+                    it.selectMember = member
                     it.isUpdate = true
                     it.showNow(childFragmentManager, "")
                 }
 
             }
         })
+
 
         binding.listview.adapter = adapter //리사이클러뷰에 어댑터 연결
     }

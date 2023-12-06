@@ -127,7 +127,6 @@ object YoungsFunction {
             "019" -> phoneEdit = "+8219$phoneEdit"
             "106" -> phoneEdit = "+82106$phoneEdit"
         }
-        Log.d("국가코드로 변경된 번호 ",phoneEdit)
         return phoneEdit
     }
 

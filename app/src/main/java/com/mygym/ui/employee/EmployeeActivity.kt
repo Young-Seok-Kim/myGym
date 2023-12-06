@@ -46,7 +46,6 @@ class EmployeeActivity : AppCompatActivity() {
     }
 
     private fun alertEndMember() {
-        Log.d("알람테스트","ㅇㅇ")
         var content: String = ""
         val endMember: List<MemberEntity> by lazy {
             YoungsFunction.getDataBase(this@EmployeeActivity)

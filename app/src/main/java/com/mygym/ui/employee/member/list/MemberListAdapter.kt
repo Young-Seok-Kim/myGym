@@ -2,6 +2,7 @@ package com.mygym.ui.employee.member.list
 
 import android.content.Context
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,23 +27,21 @@ class MemberListAdapter(): RecyclerView.Adapter<MemberListAdapter.MyViewHolder>(
         return MyViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return dataList.size
-    }
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.tv_name.text = dataList[position].name
         holder.tv_membershipEndDate.text = dataList[position].membershipEndDate.plus(" 까지")
-        val adapterPosition = holder.absoluteAdapterPosition
 
         holder.memberRoot.setOnClickListener(){
             itemClickListener.onClick(it,position,dataList[position])
         }
 
-        if(position % 2 == 0 /*LocalDate.now().toString()*/){ // todo 하드코딩 삭제 할것
+        if(position % 2 == 0){
             holder.memberRoot.setBackgroundColor(Color.parseColor("#f8f9fa"))
-//            holder.memberRoot.setBackgroundColor(Color.parseColor("#FF0000"))
         }
+    }
+
+    override fun getItemCount(): Int {
+        return dataList.size
     }
 
     interface OnItemClickListener {
