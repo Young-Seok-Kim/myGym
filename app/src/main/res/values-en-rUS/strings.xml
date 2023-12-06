@@ -26,4 +26,8 @@
     <string name="phone_number">Phone number</string>
     <string name="regist_month">Resist month</string>
     <string name="update_member">Update Member</string>
+    <string name="sign_up_date">Sign up Date</string>
+    <string name="please_backpress_again">Press the back button again to exit.</string>
+    <string name="delete_member">Delete member</string>
+    <string name="warning">Warning</string>
 </resources>

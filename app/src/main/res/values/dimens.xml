@@ -9,5 +9,7 @@
 
     <dimen name="text_size">15dp</dimen>
 
+    <dimen name="linearlayout_height">45sp</dimen>
+
 
 </resources>

@@ -1,9 +1,6 @@
 package com.mygym.ui.employee.room.member
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface MemberDao {
@@ -16,7 +13,7 @@ interface MemberDao {
     * */
 
     @Query("SELECT * FROM member ORDER BY `index` ASC")
-    suspend fun getAllMembers() : List<MemberEntity>
+    fun getAllMembers() : List<MemberEntity>
 
     @Query("SELECT * FROM member where `index`  = :index")
     suspend fun getMemberByIndex(index : String) : MemberEntity
@@ -28,10 +25,10 @@ interface MemberDao {
     suspend fun getAlphabetizedWordsWithCoroutine() : List<MemberEntity> // Flow<List<Member>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(pMemberEntity: MemberEntity)
+    fun insertMember(pMemberEntity: MemberEntity)
+    @Update
+    fun updateMember(pMemberEntity: MemberEntity)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertWithCoroutine(pMemberEntity: MemberEntity)
 
     @Query("DELETE FROM member")
     suspend fun deleteAll()

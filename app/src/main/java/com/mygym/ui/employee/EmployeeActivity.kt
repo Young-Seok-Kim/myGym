@@ -19,6 +19,7 @@ import java.time.LocalDate
 
 class EmployeeActivity : AppCompatActivity() {
 
+    private var backKeyPressedTime: Long = 0
     private lateinit var binding: ActivityEmployeeBinding
     private val youngsProgressBar: YoungsProgressBar by lazy { YoungsProgressBar(this@EmployeeActivity) }
 
@@ -41,7 +42,6 @@ class EmployeeActivity : AppCompatActivity() {
         binding.testAlarm.setOnClickListener {
             alertEndMember()
         }
-
         setContentView(binding.root)
     }
 
@@ -75,6 +75,17 @@ class EmployeeActivity : AppCompatActivity() {
                     YoungsFunction.pushAlert(this@EmployeeActivity, content)
                 }
             }.join()
+        }
+    }
+
+    override fun onBackPressed() {
+        if (System.currentTimeMillis() > backKeyPressedTime + 2000) {
+            backKeyPressedTime = System.currentTimeMillis();
+            Toast.makeText( this, getString(R.string.please_backpress_again), Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (System.currentTimeMillis() <= backKeyPressedTime + 2000) {
+            finishAndRemoveTask()
         }
     }
 }

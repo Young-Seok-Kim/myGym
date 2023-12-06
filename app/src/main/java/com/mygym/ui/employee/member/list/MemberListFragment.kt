@@ -54,9 +54,8 @@ class MemberListFragment : DialogFragment() {
     }
 
     private fun getList() {
-
         CoroutineScope(Dispatchers.Default).launch Default@{
-            CoroutineScope(Dispatchers.IO).launch {
+            CoroutineScope(Dispatchers.IO).launch IO@{
                 val members =
                     MyGymRoomDataBase.getDatabase(requireContext()).memberDao().getAllMembers()
                 data.clear()
@@ -66,7 +65,7 @@ class MemberListFragment : DialogFragment() {
                 }
                 adapter.dataList = data
             }.join()
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.Main).launch Main@{
                 adapter.notifyDataSetChanged()
             }.join()
         }
