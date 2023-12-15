@@ -29,11 +29,6 @@ class AddMemberFragment : DialogFragment() {
     lateinit var selectMember : MemberEntity
     var isUpdate : Boolean = false
 
-
-    override fun onDismiss(dialog: DialogInterface) {
-        super.onDismiss(dialog)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentAddMemberBinding.inflate(layoutInflater)
@@ -122,7 +117,7 @@ class AddMemberFragment : DialogFragment() {
                 OKAction = {
                     CoroutineScope(Dispatchers.Default).launch {
                         CoroutineScope(Dispatchers.IO).launch {
-                            YoungsFunction.getDataBase(requireContext()).memberDao().deleteMember(selectMember.name)
+                            YoungsFunction.getDataBase(requireContext()).memberDao().deleteMember(selectMember.index)
                         }.join()
                         CoroutineScope(Dispatchers.Main).launch {
                             Toast.makeText(requireContext(), "${selectMember.name} 회원이 삭제 되었습니다.",Toast.LENGTH_SHORT).show()

@@ -31,7 +31,6 @@ interface MemberDao {
     @Query("DELETE FROM member")
     suspend fun deleteAll()
 
-    @Query("DELETE FROM member where name = :pName")
-    fun deleteMember(pName : String)
-
+    @Query("DELETE FROM member where `index` = :index")
+    fun deleteMember(index : Int)
 }

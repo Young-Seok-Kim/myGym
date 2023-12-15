@@ -16,6 +16,6 @@ data class MemberEntity(
     var remark: String
 ){
     @PrimaryKey(autoGenerate = true)
-    var index: Long = 0
+    var index: Int = 0
 }
 
