@@ -5,17 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progressbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <TextView
         android:id="@+id/textView_title"
         android:layout_width="wrap_content"
@@ -50,59 +39,26 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@+id/textView_title">
 
-                <LinearLayout
+                <com.youngs.mygym.common.customlayout.CustomlayoutEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/linearlayout_height">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customlayout_name"
+                    app:textView_title="@string/name"
+                    app:editText_content_hint="@string/name"/>
 
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/s_core_dream4"
-                        android:text="@string/name" />
-
-                    <EditText
-                        android:id="@+id/editText_Name"
-                        style="@style/LinearLayout_RightEditText"
-                        android:hint="@string/name"
-                        android:inputType="textPersonName" />
-                </LinearLayout>
-
-
-                <LinearLayout
+                <com.youngs.mygym.common.customlayout.CustomlayoutEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/linearlayout_height">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customlayout_email"
+                    app:textView_title="@string/email"
+                    app:editText_content_hint="@string/email"/>
 
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/s_core_dream4"
-                        android:text="@string/email" />
-
-                    <EditText
-                        android:id="@+id/editText_Email"
-                        style="@style/LinearLayout_RightEditText"
-                        android:hint="@string/email"
-                        android:inputType="textEmailAddress" />
-                </LinearLayout>
-
-                <LinearLayout
+                <com.youngs.mygym.common.customlayout.CustomlayoutEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/linearlayout_height">
-
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:fontFamily="@font/s_core_dream4"
-                        android:text="@string/sign_up_date" />
-
-                    <TextView
-                        android:id="@+id/textView_SignupDate"
-                        style="@style/LinearLayout_RightEditText"
-                        android:hint="@string/sign_up_date"/>
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customlayout_sign_up_date"
+                    app:textView_title="@string/sign_up_date"
+                    app:editText_content_hint="@string/sign_up_date"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -115,64 +71,48 @@
                         android:fontFamily="@font/s_core_dream4"
                         android:text="@string/regist_month" />
 
-                    <EditText
-                        android:id="@+id/editText_RegistMonth"
-                        style="@style/LinearLayout_RightEditText"
-                        android:hint="@string/regist_month"
-                        android:inputType="textEmailAddress" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/linearlayout_height">
-
                     <TextView
+                        android:id="@+id/textView_select_regist_month"
                         android:layout_width="80dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@string/phone_number" />
+                        android:fontFamily="@font/s_core_dream4"
+                        tools:text="0" />
 
-                    <EditText
-                        android:id="@+id/editText_PhoneNumber"
-                        style="@style/LinearLayout_RightEditText"
-                        android:layout_weight="1"
-                        android:hint="@string/phone_number"
-                        android:inputType="phone"
-                        android:maxLength="11" />
+
+                    <Button
+                        android:id="@+id/button_regist_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/customlayout_button_main"
+                        android:text="@string/regist_month"
+                        android:fontFamily="@font/s_core_dream4"
+                        android:layout_marginStart="10sp"
+                        android:textColor="@color/white" />
+
                 </LinearLayout>
 
-                <LinearLayout
+                <com.youngs.mygym.common.customlayout.CustomlayoutEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/linearlayout_height">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customlayout_phone_number"
+                    app:editText_input_number="true"
+                    app:textView_title="@string/phone_number"
+                    app:editText_content_hint="@string/phone_number"/>
 
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/address" />
-
-                    <EditText
-                        android:id="@+id/editText_address"
-                        style="@style/LinearLayout_RightEditText"
-                        android:hint="@string/address" />
-                </LinearLayout>
-
-                <LinearLayout
+                <com.youngs.mygym.common.customlayout.CustomlayoutEditText
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/linearlayout_height">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customlayout_address"
+                    app:textView_title="@string/address"
+                    app:editText_content_hint="@string/address"/>
 
-                    <TextView
-                        android:layout_width="80dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/remark" />
-
-                    <EditText
-                        android:id="@+id/editText_Remark"
-                        style="@style/LinearLayout_RightEditText"
-                        android:hint="@string/remark"
-                        app:layout_constraintStart_toStartOf="@+id/join_password" />
-                </LinearLayout>
+                <com.youngs.mygym.common.customlayout.CustomlayoutEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customlayout_remark"
+                    app:textView_title="@string/remark"
+                    app:editText_content_hint="@string/remark"/>
 
 
                 <LinearLayout

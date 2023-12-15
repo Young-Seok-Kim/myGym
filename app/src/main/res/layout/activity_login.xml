@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mygym.ui.activity.MainActivity">
+    tools:context="com.youngs.mygym.ui.activity.MainActivity">
 
     <EditText
         android:id="@+id/userid"
@@ -141,20 +141,5 @@
         app:layout_constraintRight_toRightOf="parent"
         android:padding="5dp"
         tools:text="ver 1.0.0"/>
-
-    <ProgressBar
-        android:id="@+id/progressbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="64dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
